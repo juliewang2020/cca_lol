@@ -25,10 +25,21 @@ There's a lot of scary things I will need to figure out here.
   * No clue here on how to remove patterned backgrounds. 
 
 ## Step 1.1
-I need to figure out how to iterate through all the champion models on this website. Looking at basic webscraping tutorials, they all suggest trying to find a pattern in the URL that can be manipulated.
-> https://teemo.gg/model-viewer?skinid=jinx-0&model-type=champions 
+I need to figure out how to iterate through all the champion models on this website. Looking at basic webscraping tutorials, they all suggest trying to find a pattern in the URL that can be manipulated. So, I started fiddling around, trying to find a pattern in the url that indicates what skin is being pulled up. 
+
+> https://teemo.gg/model-viewer?skinid=jinx-0&model-type=champions
+
+> https://teemo.gg/model-viewer?skinid=jinx-1&model-type=champions
+
+> https://teemo.gg/model-viewer?skinid=jhin-0&model-type=champions
+
+See a pattern?
 
 > skinid=jinx-0
+
+> skinid=jinx-1
+
+> skinid=jhin-0
 
 
 
