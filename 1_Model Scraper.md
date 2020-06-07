@@ -60,13 +60,25 @@ Now, how to access this beautiful source code?
 
 ## Step 1.2 - How will I get a dictionary of URLs and the Skin Names?
 
-By using the popular HTML scraper, 'BeautifulSoup', I can get this information in a parseable, cleaned form!
+By using the popular HTML scraper, 'BeautifulSoup', I can get this information in a parseable, cleaned form! First I scrape the ENTIRE source code as a BeautifulSoup Object. 
+
+```python
+import bs4  #(known as "BeautifulSoup
+
+# Create beautiful soup object to examine the source code
+res = requests.get('https://teemo.gg/model-viewer')
+res.raise_for_status()
+ModelSoup = bs4.BeautifulSoup(res.text)
+```
 
 
 ```python
-import bs4  #(known as "BeautifulSoup")
+# Get List of Skins/Chromas and the corresponding URL
+skins_html = ModelSoup.findAll('script')
+skins_champs = skins_html[9].getText() # contains the dictionary of champions and skins
+skins_champs = skins_champs.split(';')
+skins_champs.pop(0) # remove the first index which does not contain champ/skin info
 ```
-
 * this will allow me to vist every single model page, and title the screenshots appropriately
 
 ### Challenges
