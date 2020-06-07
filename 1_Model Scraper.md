@@ -16,7 +16,7 @@ The background here was removed using the remove background function on Microsof
 The scraper screenshot only the model viewer area (to make removing the background easier). The process looks like this:
 ![Example](https://github.com/juliewang2020/cca_lol/blob/master/images/example_progress.PNG)
 
-## Possible Difficulties
+### Possible Difficulties
 There's a lot of scary things I will need to figure out here.
 * How to Name the Images
   * Ideally, the files should be descriptive of the champion and the specific skin. Will I need to scrape these from somewhere else and match it the website?
@@ -163,7 +163,7 @@ for skins_champ in skins_champs:
 
 Now when I visit URLs, I'll know exactly which skin I'm screenshotting! 
 
-## Lessons Learned
+### Lessons Learned
 * Examine source code more carefully instead of jumping in to scraping
 * Think about edge cases that could break your code
 
