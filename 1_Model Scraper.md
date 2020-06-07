@@ -23,6 +23,7 @@ There's a lot of scary things I will need to figure out here.
 * Controlling Mouse Inputs
   * In order to increase the image quality, I would prefer to zoom in using the model viewer a certain amount before taking the screenshot. In the above example, the model takes up a little over 50% of the model viewer's height.
   * Will I need to change the inputs on the website form in order to scrape all the skins? And can I use these buttons to help scrape for the names of the skins?
+  * Can I control the area of the screenshot? Or will I need to crop it later?
 * How to remove the backgrounds ( I don't know anything here at all!) 
   * No clue here on how to remove patterned backgrounds. 
 
