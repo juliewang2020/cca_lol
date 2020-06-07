@@ -84,6 +84,7 @@ This is what the list looks like currently. It is a list of "dictionaries", with
  
 So for each index, I will be able to pull out a champion and its skins. Within that index, is a dictionary, with entries seperated in key, value pairs of URL/skinID, skin name. Because this is text and not an actual dictionary recognizeable by python, I will need to parse and create my own dictionary of URL/skinID and skin names. There were 2 ways I thought about doing this:
   1. Split the text by comma. The even numbers will contain the URLs/skinIDs and the odd numbers will contain the skin names. Then use a regex matcher to search for a start and end match, and grab the string in between using the package mentioned here: https://stackoverflow.com/questions/3368969/find-string-between-two-substrings
+        
         Example Splits:
         > index 0 = {'id': 'aatrox-0', 
 
@@ -95,6 +96,7 @@ So for each index, I will be able to pull out a champion and its skins. Within t
         > name_result = re.search("**'name': \"(.*)\"}**", str)
   
   2. Split the text by '},{'. Which is how the dictionary splits its key value pairs. 
+        
         Example Splits:
         > index 0 = 'id': 'aatrox-0', 'name': "Default Aatrox" 
 
