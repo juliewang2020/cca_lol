@@ -53,7 +53,8 @@ While this pattern is easy to replicate, some difficulties come up. How does the
 
 I thought I could first go to each champions default skin, guaranteed to be 'champion_name-0', and then scrape the skin input for the number of skins and the name of the skins. This seemed like a solid plan, as I could easily land on the default skin, and look at the button choices for skins. I jumped in, scraping the names of the champions from the champion input. However, I did have to manually figure out how champions with problematic names were dealt with, and change that in my list of champions. 
 
-Instead, I 
+**Instead, if I had just taken the time to examine the source code more clearly, I would have seen that the website developers coded in a dictionary with all skins and their corresponding skin ids!** And I could have not taken that wasted detour method above!
+![Source Code](https://github.com/juliewang2020/cca_lol/blob/master/images/source_code.PNG)
 
 ```python
 import bs4  #(known as "BeautifulSoup")
