@@ -96,9 +96,9 @@ So for each index, I will be able to pull out a champion and its skins. Within t
   
   2. Split the text by '},{'. Which is how the dictionary splits its key value pairs. 
         Example Splits:
-        > index 0 = {'id': 'aatrox-0', 'name': "Default Aatrox"} 
+        > index 0 = 'id': 'aatrox-0', 'name': "Default Aatrox" 
 
-        > index 1 = {'id': 'aatrox-1', 'name': "Justicar Aatrox "}
+        > index 1 = 'id': 'aatrox-1', 'name': "Justicar Aatrox "
 
         Example Regex Matcher:
         > url_result = re.search("**'id': '(.*)',**", str)
