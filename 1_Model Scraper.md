@@ -172,3 +172,4 @@ Now when I visit URLs, I'll know exactly which skin I'm screenshotting!
 ## Step 1.3 - Screenshotting the Webpages
 To be continued...
  
+https://www.youtube.com/watch?v=dz59GsdvUF8
