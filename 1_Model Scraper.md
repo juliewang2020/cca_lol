@@ -27,7 +27,7 @@ There's a lot of scary things I will need to figure out here.
 * How to remove the backgrounds ( I don't know anything here at all!) 
   * No clue here on how to remove patterned backgrounds. 
 
-## Step 1.1
+## Step 1.1 - How Do I Generate the URLs?
 I need to figure out how to iterate through all the champion models on this website. Looking at basic webscraping tutorials, they all suggest trying to find a pattern in the URL that can be manipulated. So, I started fiddling around, trying to find a pattern in the url that indicates what skin is being pulled up. 
 
 > https://teemo.gg/model-viewer?skinid=jinx-0&model-type=champions
@@ -55,6 +55,13 @@ I thought I could first go to each champions default skin, guaranteed to be 'cha
 
 **Instead, if I had just taken the time to examine the source code more clearly, I would have seen that the website developers coded in a dictionary with all skins and their corresponding skin ids!** And I could have not taken that wasted detour method above!
 ![Source Code](https://github.com/juliewang2020/cca_lol/blob/master/images/source_code.PNG)
+
+Now, how to access this beautiful source code?
+
+## Step 1.2 How will I get a dictionary of URLs and the Skin Names?
+
+By using the popular HTML scraper, 'BeautifulSoup', I can get this information in a parseable, cleaned form!
+
 
 ```python
 import bs4  #(known as "BeautifulSoup")
