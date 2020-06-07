@@ -109,14 +109,57 @@ I originally went the 1st way, because I didn't think of the 2nd way until I ran
 ![Gragas Example](https://github.com/juliewang2020/cca_lol/blob/master/images/gragas_edge_case.JPG)
 
 Do you see where splitting by comma would make my code break, but splitting by dictionary would work better?
-> Gragas, Esq.
+> "Gragas, Esq." 
+
 That's right. There was a skin with a comma IN the name, so my code would split that name up. So I could not split the string by comma, and instead resorted to the second method to avoid edge cases like this. 
 
+Let's take a peek at the final code and output: 
+```python
+# Create beautiful soup object to examine the source code
+res = requests.get('https://teemo.gg/model-viewer')
+res.raise_for_status()
+ModelSoup = bs4.BeautifulSoup(res.text)
 
-### Challenges
-*  issues with punctuation in names. Originally split by ",", but turns out there was a skin name with a comma
+def scrape_model_url(str):
+    url_result = re.search("'id': '(.*)',", str)
+    if url_result:
+        url = url_result.group(1)
+        return url
+    else: 
+        return "No Match"
 
+def scrape_model_name(str):
+    name_result = re.search("'name': \"(.*)\"", str)
+    if name_result:
+        name = name_result.group(1)
+        return name
+    else: 
+        return "No Match"
+        
+# Get List of Skins/Chromas and the corresponding URL
+skins_html = ModelSoup.findAll('script')
+skins_champs = skins_html[9].getText() # contains the dictionary of champions and skins
+skins_champs = skins_champs.split(';')
+skins_champs.pop(0) # remove the first index which does not contain champ/skin info
 
+# Create Dictionary of URL and Skin Name
+skin_dict = {}
+for skins_champ in skins_champs:
+    skins = skins_champ.split("},{") # would split by ",", but some names have a comma
+    for skin in skins:
+        url = scrape_model_url(skin)
+        name = scrape_model_name(skin)
+        if url == "No Match" or name == "No Match":
+            break
+        else:
+            skin_dict[url] = name
+            prev_name = name
+            prev_url = url
+    if url == "No Match" or name == "No Match":
+            print("Done Scraping Champion Skin Information, Last Skin is " + prev_name + " (" + prev_url + ")" )
+            break
+```
 
 ### Lessons Learned
-* Examine Source Code more carefully!!!
+* Examine Source Code more carefully instead of writing code that will be thrown away!
+* Think about edge cases that could break your code!
