@@ -47,6 +47,12 @@ See a pattern?
 
 * url can be easily modified by champ name + skin number
 * need to somehow come up with a combination of this to generate each url
+
+
+```python
+import bs4  #(known as "BeautifulSoup")
+```
+
 * this will allow me to vist every single model page, and title the screenshots appropriately
 
 ### Challenges
