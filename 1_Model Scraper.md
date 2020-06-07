@@ -58,7 +58,7 @@ I thought I could first go to each champions default skin, guaranteed to be 'cha
 
 Now, how to access this beautiful source code?
 
-## Step 1.2 How will I get a dictionary of URLs and the Skin Names?
+## Step 1.2 - How will I get a dictionary of URLs and the Skin Names?
 
 By using the popular HTML scraper, 'BeautifulSoup', I can get this information in a parseable, cleaned form!
 
