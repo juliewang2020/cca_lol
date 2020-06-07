@@ -7,6 +7,8 @@ To gather data that I believe would be good for this project, I've decided to sc
 The model viewer allows you to select the desired champion and skin, rotate and zoom in, and view animations. For the purpose of this project, I will be using the forward-facing pose, non-animated, as seen in the above image. Luckily, it is also the default position the viewer displays the model in.
 
 The scraper should be able to screenshot each skin within the viewer and remove the background with the website logo. The end result should look something like this: 
+
+
 ![Image of Model-No Background](https://github.com/juliewang2020/cca_lol/blob/master/images/model_no_background.png)
 
 The background here was removed using the remove background function on Microsoft Word. The AI there seems to able to find the outline of the champion easily, despite similar colors of purple in this model and the background. However, it does struggle with removing the background between the champion's body parts and weapons. Hopefully I can improve on this using Python.
