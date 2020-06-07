@@ -70,8 +70,8 @@ res = requests.get('https://teemo.gg/model-viewer')
 res.raise_for_status()
 ModelSoup = bs4.BeautifulSoup(res.text)
 ```
-
-
+Then, the tag used to identify this champion dictionary is <script>. I created a list of objects of all the script tags. From iterating through, using getText() to textify the objects, I see that the script object we want is the one at index 9. In addition, I split the 
+ 
 ```python
 # Get List of Skins/Chromas and the corresponding URL
 skins_html = ModelSoup.findAll('script')
@@ -82,8 +82,6 @@ skins_champs.pop(0) # remove the first index which does not contain champ/skin i
 * this will allow me to vist every single model page, and title the screenshots appropriately
 
 ### Challenges
-* need to examine the html better (almost scrapped champ names and made it harder for myself), there was a js script that the website already had compiled with the matching url and name of skin
-  * luckily in the script, there is a dictionary variable with every single skin and it's url identifier
 *  issues with punctuation in names. Originally split by ",", but turns out there was a skin name with a comma
 
 
