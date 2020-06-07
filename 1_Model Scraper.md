@@ -159,7 +159,14 @@ for skins_champ in skins_champs:
             print("Done Scraping Champion Skin Information, Last Skin is " + prev_name + " (" + prev_url + ")" )
             break
 ```
+![Output](https://github.com/juliewang2020/cca_lol/blob/master/images/output.JPG)
 
-### Lessons Learned
-* Examine Source Code more carefully instead of writing code that will be thrown away!
-* Think about edge cases that could break your code!
+Now when I visit URLs, I'll know exactly which skin I'm screenshotting! 
+
+## Lessons Learned
+* Examine source code more carefully instead of jumping in to scraping
+* Think about edge cases that could break your code
+
+## Step 1.3 - Screenshotting the Webpages
+To be continued...
+ 
