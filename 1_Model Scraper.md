@@ -86,12 +86,12 @@ So for each index, I will be able to pull out a champion and its skins. Within t
   1. Split the text by comma. The even numbers will contain the URLs/skinIDs and the odd numbers will contain the skin names. Then use a regex matcher to search for a start and end match, and grab the string in between using the package mentioned here: https://stackoverflow.com/questions/3368969/find-string-between-two-substrings
         
         Example Splits:
-        > index 0 = {'id': 'aatrox-0', 
+        > index 0 = {'id': 'aatrox-0' 
 
         > index 1 = 'name': "Default Aatrox"} 
 
         Example Regex Matcher:
-        > url_result = re.search("**'id': '(.*)',**", str)
+        > url_result = re.search("**'id': '(.*)'**", str)
 
         > name_result = re.search("**'name': \"(.*)\"}**", str)
   
