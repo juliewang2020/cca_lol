@@ -24,7 +24,14 @@ There's a lot of scary things I will need to figure out here.
 * How to remove the backgrounds ( I don't know anything here at all) 
   * No clue here on how to remove patterned backgrounds. 
 
-### Reasoning
+## Step 1.1
+I need to figure out how to iterate through all the champion models on this website. Looking at basic webscraping tutorials, they all suggest trying to find a pattern in the URL that can be manipulated.
+> https://teemo.gg/model-viewer?skinid=jinx-0&model-type=champions 
+
+> skinid=jinx-0
+
+
+
 * url can be easily modified by champ name + skin number
 * need to somehow come up with a combination of this to generate each url
 * this will allow me to vist every single model page, and title the screenshots appropriately
