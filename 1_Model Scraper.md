@@ -70,8 +70,8 @@ res = requests.get('https://teemo.gg/model-viewer')
 res.raise_for_status()
 ModelSoup = bs4.BeautifulSoup(res.text)
 ```
-Then, the tag used to identify this champion dictionary is <script>. I created a list of objects of all the script tags. From iterating through, using getText() to textify the objects, I see that the script object we want is the one at index 9. In addition, I split the 
- 
+Then, the tag used to identify this champion dictionary is <script>. I created a list of objects of all the script tags. From iterating through, using getText() to textify the objects, I see that the script object we want is the one at index 9. In addition, when I examined the text, I saw that the dictionary of skins for EACH champ could be split using ';'. 
+
 ```python
 # Get List of Skins/Chromas and the corresponding URL
 skins_html = ModelSoup.findAll('script')
@@ -79,7 +79,21 @@ skins_champs = skins_html[9].getText() # contains the dictionary of champions an
 skins_champs = skins_champs.split(';')
 skins_champs.pop(0) # remove the first index which does not contain champ/skin info
 ```
-* this will allow me to vist every single model page, and title the screenshots appropriately
+This is what the list looks like currently. It is a list of "dictionaries", with each index being one champ.
+![List Example](https://github.com/juliewang2020/cca_lol/blob/master/images/champ_skindicts.JPG)
+ 
+So for each index, I will be able to pull out a champion and its skins. Within that index, is a dictionary, with entries seperated in key, value pairs of URL/skinID, skin name. Because this is text and not an actual dictionary recognizeable by python, I will need to parse and create my own dictionary of URL/skinID and skin names. There were 2 ways I thought about doing this:
+  1. Split the text by comma. The even numbers will contain the URLs/skinIDs and the odd numbers will contain the skin names. Then use a regex matcher to search for a start and end match, and grab the string in between
+   Example Splits:
+   > index 0 = {'id': 'aatrox-0', 
+  
+  > index 1 = 'name': "Default Aatrox"} 
+   
+   Example Regex Matcher
+  > 
+  
+  >
+  2.
 
 ### Challenges
 *  issues with punctuation in names. Originally split by ",", but turns out there was a skin name with a comma
