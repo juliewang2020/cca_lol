@@ -115,6 +115,8 @@ Do you see where splitting by comma would make my code break, but splitting by d
 
 That's right. There was a skin with a comma IN the name, so my code would split that name up. So I could not split the string by comma, and instead resorted to the second method to avoid edge cases like this. 
 
+Another thing I considered after finding this edge case was removing punctuation from the skin names and white spaces. I considered this because ":" and "/" are not valid characters for filenames, and if I wanted to name each img after the specific skin, I need to make this adjustment. I also replaced whitespaces with underscores, just as a naming convention. 
+
 Let's take a peek at the final code and output: 
 ```python
 # Create beautiful soup object to examine the source code
@@ -134,6 +136,8 @@ def scrape_model_name(str):
     name_result = re.search("'name': \"(.*)\"", str)
     if name_result:
         name = name_result.group(1)
+        name = name.translate(str.maketrans('', '', string.punctuation))
+        name = name.replace(" ", "_")
         return name
     else: 
         return "No Match"
@@ -168,6 +172,7 @@ Now when I visit URLs, I'll know exactly which skin I'm screenshotting!
 ### Lessons Learned
 * Examine source code more carefully instead of jumping in to scraping
 * Think about edge cases that could break your code
+* Think about how those edge cases could impact you further down the line
 
 ## Step 1.3 - Screenshotting the Webpages
 To be continued...
