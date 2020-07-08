@@ -174,13 +174,4 @@ Now when I visit URLs, I'll know exactly which skin I'm screenshotting!
 * Think about edge cases that could break your code
 * Think about how those edge cases could impact you further down the line
 
-## Step 1.3 - Screenshotting the Webpages
-To be continued...
- 
-https://www.youtube.com/watch?v=dz59GsdvUF8
 
-
-Things Attempted
-* Screenshotting by element id --> canvas returned blacked out
-* Screenshotting, recording where element is,then cropping --> y is offset by scrolling
-* Could not zoom in, need a physical scroll bar
